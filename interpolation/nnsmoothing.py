@@ -52,8 +52,8 @@ class NNSmoothing(object):
         if self.verbose_mode:
             print ('NNSmoothing: %s -> %s' % ((x_new, y_new), results))
 
-        weighted_values = [value / dist for (dist, _, _, value) in results if dist != 0]
-        weights = [1.0 / dist for (dist, _, _, _) in results if dist != 0]
+        weighted_values = [value / (1 + dist) for (dist, _, _, value) in results]
+        weights = [1.0 / (1 + dist) for (dist, _, _, _) in results]
 
         return sum(weighted_values) / sum(weights)
 
