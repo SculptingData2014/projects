@@ -34,7 +34,7 @@ class NNSmoothing(object):
         """
         Implements the distance between (x1, y1) and (x2, y2).
         """
-        return math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1))
+        raise NotImplementedError(';)')
 
     def interpolate(self, x_new, y_new, k=4):
         """
